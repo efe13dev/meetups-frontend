@@ -1,5 +1,5 @@
+import { API_URL as url } from '../utils/constants';
 import { getToken } from '../utils/getToken';
-const url = import.meta.env.VITE_API_URL;
 
 export const registerService = async (registerData) => {
   try {

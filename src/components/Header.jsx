@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import meetupLogo from '../assets/meetup-logo.png';
 import { NavLink } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
-const backendUrl = import.meta.env.VITE_API_URL;
+import { API_URL as backendUrl } from '../utils/constants';
 
 function Header({ children }) {
   const { authUser } = useAuth();

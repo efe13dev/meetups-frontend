@@ -7,7 +7,7 @@ import {
   deleteInscribeMeetupService,
   inscribeMeetupService
 } from '../services/meetups';
-const backendUrl = import.meta.env.VITE_API_URL;
+import { API_URL as backendUrl } from '../utils/constants';
 
 function MeetupDetail({ meetup }) {
   const { authUser } = useAuth();

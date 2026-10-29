@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import checkListIcon from '../assets/checklist-icon.png';
 import cityIcon from '../assets/city-icon.png';
 import calendarIcon from '../assets/calendar-icon.png';
-const backendUrl = import.meta.env.VITE_API_URL;
+import { API_URL as backendUrl } from '../utils/constants';
 export const MeetupCard = ({
   id,
   title,
