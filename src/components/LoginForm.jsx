@@ -23,10 +23,10 @@ function LoginForm() {
     e.preventDefault();
     try {
       await authLogin(loginData);
-      swal('Has iniciado sesión');
+      void swal('Has iniciado sesión');
       navigate('/');
     } catch (error) {
-      swal('Ha ocurrido un error', error.message);
+      void swal('Ha ocurrido un error', error.message);
     }
   };
   return (

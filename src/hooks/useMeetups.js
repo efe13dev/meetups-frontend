@@ -14,12 +14,12 @@ export const useMeetups = () => {
 
         setLoading(false);
       } catch (error) {
-        swal('Ha ocurrido un error', error.message);
+        void swal('Ha ocurrido un error', error.message);
       } finally {
         setLoading(false);
       }
     }
-    fetchMeetups();
+    void fetchMeetups();
   }, []);
 
   return {

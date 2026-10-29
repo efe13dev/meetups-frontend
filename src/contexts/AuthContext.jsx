@@ -22,13 +22,13 @@ export const AuthProvider = ({ children }) => {
         const data = await getProfileUserService();
         setAuthUser(data.user);
       } catch (error) {
-        swal('Ha ocurrido un error', error.message);
+        void swal('Ha ocurrido un error', error.message);
       } finally {
         setLoading(false);
       }
     };
     const token = getToken();
-    if (token) fetchUser();
+    if (token) void fetchUser();
   }, [isAuthenticated]);
 
   const authLogin = async (loginData) => {
@@ -43,7 +43,7 @@ export const AuthProvider = ({ children }) => {
         return data;
       }
     } catch (error) {
-      swal('Ha ocurrido un error', error.message);
+      void swal('Ha ocurrido un error', error.message);
       throw error;
     } finally {
       setLoading(false);
@@ -54,7 +54,7 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem(TOKEN_LOCAL_STORAGE_KEY);
     setIsAuthenticated(false);
     setAuthUser(null);
-    swal('Has cerrado sesión');
+    void swal('Has cerrado sesión');
   };
 
   return (

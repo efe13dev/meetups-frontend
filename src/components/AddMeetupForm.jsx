@@ -42,12 +42,12 @@ function AddMeetupForm() {
       if (result.status === 'error') {
         throw new Error(result.message);
       } else {
-        swal('Meetup creado con éxito');
+        void swal('Meetup creado con éxito');
         navigate('/');
       }
     } catch (error) {
-      console.log(error);
-      swal('Ha ocurrido un error', error.message);
+      console.error(error);
+      void swal('Ha ocurrido un error', error.message);
     } finally {
       setLoading(false);
     }

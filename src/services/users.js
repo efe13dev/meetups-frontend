@@ -2,7 +2,6 @@ import { getToken } from '../utils/getToken';
 const url = import.meta.env.VITE_API_URL;
 
 export const registerService = async (registerData) => {
-  console.log(registerData);
   try {
     const response = await fetch(`${url}/users`, {
       method: 'POST',

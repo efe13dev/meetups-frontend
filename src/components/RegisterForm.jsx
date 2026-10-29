@@ -16,7 +16,6 @@ function RegisterForm() {
   const [loading, setLoading] = useState(false);
   const handleInputChangeFile = ({ target }) => {
     const { name, files } = target;
-    console.log(files[0]);
     setRegisterData({
       ...registerData,
       [name]: files[0]
@@ -36,7 +35,7 @@ function RegisterForm() {
     const passwordConfirmation = e.target.passwordConfirmation.value;
 
     if (password !== passwordConfirmation) {
-      swal('Las contraseñas no coinciden');
+      void swal('Las contraseñas no coinciden');
     } else {
       try {
         setLoading(true);
@@ -48,11 +47,11 @@ function RegisterForm() {
         if (result.status === 'error') {
           throw new Error(result.message);
         } else {
-          swal('Usuario registrado con éxito');
+          void swal('Usuario registrado con éxito');
           navigate('/login');
         }
       } catch (error) {
-        swal('Ha ocurrido un error', error.message);
+        void swal('Ha ocurrido un error', error.message);
       } finally {
         setLoading(false);
       }

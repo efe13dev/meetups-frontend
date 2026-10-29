@@ -55,7 +55,7 @@ function MeetupDetail({ meetup }) {
           {isInscribed ? (
             <button
               onClick={() => {
-                deleteInscribeMeetupService(meetup.id);
+                void deleteInscribeMeetupService(meetup.id);
                 setIsInscribed(false);
                 actualizarEstado(authUser.name, 'delete');
               }}
@@ -69,7 +69,7 @@ function MeetupDetail({ meetup }) {
           ) : (
             <button
               onClick={() => {
-                inscribeMeetupService(meetup.id);
+                void inscribeMeetupService(meetup.id);
                 setIsInscribed(true);
                 actualizarEstado(authUser.name, 'insert');
               }}
